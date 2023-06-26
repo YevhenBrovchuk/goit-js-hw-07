@@ -11,18 +11,8 @@ function createMarkupItems(arr) {
 	<img src="${item.preview}"  alt="${item.description} " class="gallery__image" ></a></li>`).join("")
 }
 list.insertAdjacentHTML("beforeend", createMarkupItems(galleryItems))
+new SimpleLightbox('.gallery a',{captionsData: `alt`, captionDelay: 250,});
 
 
 
-list.addEventListener("click", handlerPhotoClick)
-
-function handlerPhotoClick(evt) {
-	evt.preventDefault()
-	if (!evt.target.classList.contains("gallery__image")) {
-		return;
-	}
-
-	 new SimpleLightbox('.gallery a',{captionsData: `alt`, captionDelay: 250,});
-	
-}
 
